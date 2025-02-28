@@ -15,7 +15,7 @@ export const Hero = () => {
             </h1>
             <p className="md:text-lg text-sm">Showcase your work, attract clients, and grow your career effortlessly</p>
           </div>
-          <img src="/laptop.png" alt="Laptop" className="mt-16" />
+          <img src="/laptop.png" alt="Laptop" className="md:mt-16 mt-20" />
         </div>
       </section>
     );

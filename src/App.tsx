@@ -1,5 +1,6 @@
 import { Header } from './components/Header'
 import { Hero } from './components/Hero'
+import { Templates } from './components/Templates'
 import { Why } from './components/Why'
 import './index.css'
 
@@ -9,6 +10,7 @@ function App() {
       <Header />
       <Hero />
       <Why />
+      <Templates />
     </div>
   )
 }
