@@ -1,5 +1,3 @@
-import { Icon } from "@iconify/react/dist/iconify.js";
-
 interface TestimonialCardProps {
     testimonial: string;
     name: string;
@@ -7,24 +5,27 @@ interface TestimonialCardProps {
     picture: string;
 }
 
-export const TestimonialCard = ({testimonial, name, job, picture}: TestimonialCardProps) => {
+export const TestimonialCard = ({ testimonial, name, job, picture }: TestimonialCardProps) => {
     return (
-        <div className="">
-            <div className="flex space-x-2">
-                <Icon icon="mdi:star" width="24" height="24" className="bg-gradient-to-b from-purple-neon to-blue-neon text-transparent bg-clip-text" />
-                <Icon icon="mdi:star" width="24" height="24" className="bg-gradient-to-b from-purple-neon to-blue-neon text-transparent bg-clip-text" />
-                <Icon icon="mdi:star" width="24" height="24" className="bg-gradient-to-b from-purple-neon to-blue-neon text-transparent bg-clip-text" />
-                <Icon icon="mdi:star" width="24" height="24" className="bg-gradient-to-b from-purple-neon to-blue-neon text-transparent bg-clip-text" />
-                <Icon icon="mdi:star" width="24" height="24" className="bg-gradient-to-b from-purple-neon to-blue-neon text-transparent bg-clip-text" />
+        <div className="bg-white p-8 rounded-2xl my-drop-shadow">
+            <div className="flex gap-2 items-center">
+                <div className="flex">
+                    <img src="/star.png" alt="Star" />
+                    <img src="/star.png" alt="Star" />
+                    <img src="/star.png" alt="Star" />
+                    <img src="/star.png" alt="Star" />
+                    <img src="/star.png" alt="Star" />
+                </div>
+                <span>5.0</span>
             </div>
-            <p className="text-lg">{testimonial}</p>
-            <div className="flex items-center space-x-2">
+            <p className="font-bold mt-3">{testimonial}</p>
+            <div className="flex items-center space-x-2 mt-8">
                 <img src={picture} alt={name} className="w-12 h-12 rounded-full" />
                 <div>
-                    <p className="font-bold">{name}</p>
-                    <p className="text-sm">{job}</p>
+                    <p className="text-sm font-bold">{name}</p>
+                    <p className="text-xs">{job}</p>
                 </div>
             </div>
         </div>
     );
-}
+};
