@@ -1,5 +1,6 @@
 import { Header } from './components/Header'
 import { Hero } from './components/Hero'
+import { Pricing } from './components/Pricing'
 import { Templates } from './components/Templates'
 import { Testimonials } from './components/Testimonials'
 import { Why } from './components/Why'
@@ -13,6 +14,7 @@ function App() {
       <Why />
       <Templates />
       <Testimonials />
+      <Pricing />
     </div>
   )
 }
