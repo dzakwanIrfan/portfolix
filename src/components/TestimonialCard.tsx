@@ -7,7 +7,7 @@ interface TestimonialCardProps {
 
 export const TestimonialCard = ({ testimonial, name, job, picture }: TestimonialCardProps) => {
     return (
-        <div className="bg-white p-8 rounded-2xl my-drop-shadow">
+        <div className="bg-white p-8 rounded-2xl my-drop-shadow transition-all">
             <div className="flex gap-2 items-center">
                 <div className="flex">
                     <img src="/star.png" alt="Star" />

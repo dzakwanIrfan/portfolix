@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { TestimonialCard } from "./TestimonialCard";
 
 export const Testimonials = () => {
+    const [active, setActive] = useState(false);
     const testimonials = {
         testimonial1: {
             testimonial: '"PortfoliX helped me land my first client within a week! The templates are so professional, and the customization options made it easy to showcase my work exactly how I wanted."',
@@ -39,14 +41,19 @@ export const Testimonials = () => {
             picture: "/pict6.png"
         }
     }
+    const handleToggle = () => {
+        setActive(!active);
+    }
+
+    const displayedTestimonials = active ? testimonials : Object.values(testimonials).slice(0, 3);
     return (
-        <section className="bg-white text-myBlack lg:mx-40 md:mx-16 sm:mx-8 mx-4 pb-16 flex flex-col justify-center items-center space-y-16">
+        <section className="bg-white text-myBlack lg:mx-40 md:mx-16 sm:mx-8 mx-4 pb-24 flex flex-col justify-center items-center md:space-y-12 space-y-8">
             <div className="flex flex-col text-center items-center justify-center md:space-y-4 space-y-3 xl:w-5/12 md:w-3/4 w-full">
                 <h2 className="md:text-5xl xs:text-4xl text-[28px]">See What Our Customers Are <span className="font-bold bg-gradient-to-r from-purple-neon to-blue-neon text-transparent bg-clip-text">Saying</span></h2>
                 <p className="md:text-lg text-sm">Don’t just take our word for it—hear from creators who’ve used PortfoliX to showcase their work, attract clients, and grow their careers.</p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-                {Object.values(testimonials).map((testimonial, index) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 transition-all">
+                {Object.values(displayedTestimonials).map((testimonial, index) => (
                     <TestimonialCard
                         key={index}
                         testimonial={testimonial.testimonial}
@@ -56,6 +63,12 @@ export const Testimonials = () => {
                     />
                 ))}
             </div>
+            <button 
+                className="text-sm font-bold bg-gradient-to-r from-purple-neon to-blue-neon text-white px-8 py-3 rounded-lg hover:shadow-lg transition duration-300 ease-in-out"
+                onClick={() => handleToggle()}
+            >
+                {active ? 'See less testimonials' : 'See more testimonials'}
+            </button>
         </section>
     );
 }
