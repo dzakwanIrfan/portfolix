@@ -6,19 +6,17 @@ export const Why = () => {
     const { ref, inView } = useInView({
         threshold: 1,
         triggerOnce: true,
-        trackVisibility: true,
-        delay: 800,
     });
     const { ref:cardRef1, inView:cardRefVisible1 } = useInView({
-        threshold: 0.8,
+        threshold: 0.9,
         triggerOnce: true,
     });
     const { ref:cardRef2, inView:cardRefVisible2 } = useInView({
-        threshold: 0.8,
+        threshold: 0.9,
         triggerOnce: true,
     });
     const { ref:cardRef3, inView:cardRefVisible3 } = useInView({
-        threshold: 0.8,
+        threshold: 0.9,
         triggerOnce: true,
     });
     return (

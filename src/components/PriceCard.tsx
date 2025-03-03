@@ -11,7 +11,7 @@ interface PriceCardProps {
 
 export const PriceCard = ({plan, price, description, features, cta, middle}: PriceCardProps) => {
     return (
-        <div className={`my-drop-shadow p-8 rounded-2xl ${middle ? 'text-white bg-gradient-to-br from-purple-neon to-blue-neon' : 'text-myBlack bg-white'} flex flex-col space-y-4 xl:w-4/12 w-full`}>
+        <div className={`my-drop-shadow p-8 rounded-2xl ${middle ? 'text-white bg-gradient-to-br from-purple-neon to-blue-neon' : 'text-myBlack bg-white'} flex flex-col space-y-4`}>
             <div className="flex flex-col space-y-3">
                 <div className="flex flex-col space-y-4">
                     <div className="flex justify-between items-center">

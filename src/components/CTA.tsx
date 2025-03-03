@@ -1,6 +1,12 @@
+import { useInView } from "react-intersection-observer";
+
 export const CTA = () => {
+    const { ref, inView } = useInView({
+        threshold: 0.5,
+        triggerOnce: true,
+    });
     return (
-        <section className="my-drop-shadow overflow-hidden relative rounded-[32px] bg-white text-myBlack lg:mx-40 md:mx-16 sm:mx-8 mx-4 py-20 mb-24 flex flex-col justify-center items-center md:space-y-12 space-y-8">
+        <section ref={ref} className={`my-drop-shadow overflow-hidden relative rounded-[32px] bg-white text-myBlack lg:mx-40 md:mx-16 sm:mx-8 mx-4 py-20 mb-24 flex flex-col justify-center items-center md:space-y-12 space-y-8 ${inView ? "animate-[fade-in-up_0.5s_ease-out]" : "opacity-0"}`}>
             <img src="/ellipse-purple.svg" alt="" className="absolute object-cover xl:-top-16 lg:top-[15%] md:top-[25%] top-[45%] -left-1/2" />
             <img src="/ellipse-blue.svg" alt="" className="absolute object-cover xl:-top-16 lg:top-[15%] md:top-[25%] top-[45%] -right-1/2" />
             <div className="z-10 flex flex-col text-center items-center justify-center md:space-y-4 space-y-3 w-full">
